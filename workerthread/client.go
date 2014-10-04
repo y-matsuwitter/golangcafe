@@ -5,12 +5,14 @@ import (
 	"time"
 )
 
+// Client is a client thread in worker thread pattern.
 type Client struct {
 	name    string
 	channel *Channel
 	rand    *rand.Rand
 }
 
+// NewClient creates client.
 func NewClient(name string, channel *Channel) *Client {
 	return &Client{
 		name,
@@ -19,6 +21,7 @@ func NewClient(name string, channel *Channel) *Client {
 	}
 }
 
+// Run is a runner for each request.
 func (c *Client) Run() {
 	go func() {
 		i := 0

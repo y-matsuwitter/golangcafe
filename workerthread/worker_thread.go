@@ -2,6 +2,7 @@ package workerthread
 
 import "time"
 
+// Main runs an example of worker thread pattern.
 func Main() {
 	channel := NewChannel(5)
 	channel.StartWorkers()
